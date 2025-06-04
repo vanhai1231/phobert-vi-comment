@@ -1,178 +1,108 @@
+# 🚀 PhoBERT Comment Classifier
+### *Mô hình phân loại cảm xúc bình luận tiếng Việt thông minh*
 
+<div align="center">
 
+![PhoBERT](https://img.shields.io/badge/Model-PhoBERT-blue?style=for-the-badge&logo=huggingface)
+![Vietnamese](https://img.shields.io/badge/Language-Vietnamese-red?style=for-the-badge&logo=google-translate)
+![AI](https://img.shields.io/badge/AI-NLP-green?style=for-the-badge&logo=tensorflow)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
+[![Hugging Face Model](https://img.shields.io/badge/🤗%20Model-phobert--vi--comment--4class-ff6b35?style=flat-square)](https://huggingface.co/vanhai123/phobert-vi-comment-4class)
+[![Dataset](https://img.shields.io/badge/📊%20Dataset-Vietnamese%20Social%20Comments-purple?style=flat-square)](https://huggingface.co/datasets/vanhai123/vietnamese-social-comments)
+[![Demo](https://img.shields.io/badge/🎮%20Demo-Gradio%20App-orange?style=flat-square)](https://huggingface.co/spaces/vanhai123/phobert-vi-comment-app)
 
+</div>
 
-🚀 PhoBERT Comment Classifier
-Mô hình phân loại cảm xúc bình luận tiếng Việt thông minh
+---
 
+## 🎯 **Tổng quan dự án**
 
+> 💡 **Sứ mệnh**: Xây dựng công cụ AI hiện đại để phân tích và phân loại cảm xúc trong các bình luận tiếng Việt trên mạng xã hội
 
+<table>
+<tr>
+<td width="50%">
 
+### 🎭 **Khả năng phân loại**
+- 🟢 **Positive** - Tích cực
+- 🔴 **Negative** - Tiêu cực  
+- ⚪ **Neutral** - Trung lập
+- ⚠️ **Toxic** - Kích động, phản cảm
 
+</td>
+<td width="50%">
 
+### 📱 **Nguồn dữ liệu**
+- 🎵 TikTok Comments
+- 📘 Facebook Posts
+- 🎬 YouTube Reviews
+- 🌐 Các platform khác
 
+</td>
+</tr>
+</table>
 
+---
 
+## 📊 **Thông tin Dataset**
 
+<div align="center">
 
+| 📈 **Metric** | 📋 **Value** | 🎯 **Description** |
+|:-------------:|:------------:|:-------------------|
+| **📝 Comments** | `4,896` | Tổng số bình luận được thu thập |
+| **🏷️ Labels** | `4 classes` | positive, negative, neutral, toxic |
+| **🌐 Sources** | `Multi-platform` | TikTok, Facebook, YouTube |
+| **📊 Fields** | `3 columns` | comment, label, category |
 
+</div>
 
-🎯 Tổng quan dự án
+<details>
+<summary>🔍 <strong>Chi tiết phân bố dữ liệu</strong></summary>
 
-💡 Sứ mệnh: Xây dựng công cụ AI hiện đại để phân tích và phân loại cảm xúc trong các bình luận tiếng Việt trên mạng xã hội.
-
-
-
-
-
-🎭 Khả năng phân loại
-
-
-flowchart LR
-    A[📝 Input Comment] --> B{🤖 PhoBERT}
-    B --> C[🟢 Positive]
-    B --> D[🔴 Negative]
-    B --> E[⚪ Neutral]
-    B --> F[⚠️ Toxic]
-    
-    style A fill:#e1f5fe
-    style B fill:#f3e5f5
-    style C fill:#e8f5e8
-    style D fill:#ffebee
-    style E fill:#fafafa
-    style F fill:#fff3e0
-
-
-🟢 Positive - Tích cực
-🔴 Negative - Tiêu cực  
-⚪ Neutral - Trung lập
-⚠️ Toxic - Kích động, phản cảm
-
-
-
-
-
-📱 Nguồn dữ liệu
-
-
-mindmap
-  root((🌐 Data Sources))
-    🎵 TikTok
-      Comments
-      Reactions
-    📘 Facebook
-      Posts
-      Reviews
-    🎬 YouTube
-      Comments
-      Reviews
-    📊 Others
-      Forums
-      Social Media
-
-
-🎵 TikTok Comments
-📘 Facebook Posts
-🎬 YouTube Reviews
-🌐 Các platform khác
-
-
-
-
-
-
-
-📊 Thông tin Dataset
-
-
-
-
-
-📈 Metric
-📋 Value
-🎯 Description
-
-
-
-📝 Comments
-4,896
-Tổng số bình luận được thu thập
-
-
-🏷️ Labels
-4 classes
-positive, negative, neutral, toxic
-
-
-🌐 Sources
-Multi-platform
-TikTok, Facebook, YouTube
-
-
-📊 Fields
-3 columns
-comment, label, category
-
-
-pie title Dataset Distribution
-    "🟢 Positive" : 35
-    "🔴 Negative" : 25
-    "⚪ Neutral" : 25
-    "⚠️ Toxic" : 15
-
-
-
-
-🔍 Chi tiết phân bố dữ liệu
-
+```
 📊 Label Distribution:
 ├── 🟢 Positive: ~35%
 ├── 🔴 Negative: ~25% 
 ├── ⚪ Neutral:  ~25%
 └── ⚠️ Toxic:    ~15%
+```
 
+</details>
 
+---
 
+## ⚡ **Cài đặt nhanh**
 
-⚡ Cài đặt nhanh
-🛠️ Requirements
-pip install transformers datasets scikit-learn sentencepiece torch gradio
+### 🛠️ **Requirements**
 
+```bash
+# 📦 Cài đặt các thư viện cần thiết
+pip install transformers datasets scikit-learn sentencepiece torch
+```
 
-💻 Chi tiết dependencies
+<details>
+<summary>💻 <strong>Chi tiết dependencies</strong></summary>
 
+```txt
 transformers>=4.21.0
 datasets>=2.4.0
 scikit-learn>=1.1.0
 sentencepiece>=0.1.97
 torch>=1.12.0
 gradio>=3.0.0  # Cho demo app
+```
 
+</details>
 
+---
 
+## 🏗️ **Hướng dẫn Training**
 
-🏗️ Hướng dẫn Training
+### 🚀 **Quick Start**
 
-
-
-
-
-🚀 Quick Start
-sequenceDiagram
-    participant U as 👤 User
-    participant M as 🤖 Model
-    participant D as 📊 Dataset
-    participant T as 🏃‍♂️ Trainer
-    
-    U->>M: Load PhoBERT
-    M->>D: Load Vietnamese Data
-    D->>T: Start Training
-    T->>M: Update Weights
-    M->>U: Return Trained Model
-    
-    Note over U,M: 🎯 86% Accuracy Achieved!
-
+```python
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 # 🔧 Khởi tạo model và tokenizer
@@ -182,68 +112,56 @@ model = AutoModelForSequenceClassification.from_pretrained(
     model_name, 
     num_labels=4
 )
+```
 
-📋 Training Process
+### 📋 **Training Process**
 
+<table>
+<tr>
+<td width="50%">
 
-
-
-🎯 Bước 1: Chuẩn bị
+**🎯 Bước 1: Chuẩn bị**
+```python
 # Load dataset
 from datasets import load_dataset
 dataset = load_dataset("vanhai123/vietnamese-social-comments")
+```
 
+</td>
+<td width="50%">
 
-
-
-🏃‍♂️ Bước 2: Training
+**🏃‍♂️ Bước 2: Training**
+```python
 # Chạy training script
 python train.py
 # hoặc sử dụng notebook
 jupyter notebook train.ipynb
+```
 
+</td>
+</tr>
+</table>
 
+---
 
+## 📈 **Kết quả Performance**
 
+<div align="center">
 
+### 🏆 **Model Performance**
 
-📈 Kết quả Performance
+| 📊 **Metric** | 📈 **Score** | 🎯 **Details** |
+|:-------------:|:------------:|:---------------|
+| **🎯 Accuracy** | `~86%` | Độ chính xác tổng thể |
+| **📊 Macro F1** | `~83%` | F1-score trung bình |
+| **🟢 Best Class** | `Positive` | Phân loại tốt nhất |
+| **⚠️ Strong Class** | `Toxic` | Nhận diện tốt nội dung độc hại |
 
+</div>
 
+### 📊 **Detailed Results**
 
-🏆 Model Performance
-
-
-
-📊 Metric
-📈 Score
-🎯 Details
-
-
-
-🎯 Accuracy
-~86%
-Độ chính xác tổng thể
-
-
-📊 Macro F1
-~83%
-F1-score trung bình
-
-
-🟢 Best Class
-Positive
-Phân loại tốt nhất
-
-
-⚠️ Strong Class
-Toxic
-Nhận diện tốt nội dung độc hại
-
-
-
-
-📊 Detailed Results
+```
 🎭 Classification Performance:
 ┌─────────────┬─────────────┬─────────────┬─────────────┐
 │   Class     │ Precision   │   Recall    │   F1-Score  │
@@ -253,17 +171,23 @@ Nhận diện tốt nội dung độc hại
 │ ⚪ Neutral  │    0.81     │    0.79     │    0.80     │
 │ ⚠️ Toxic    │    0.88     │    0.86     │    0.87     │
 └─────────────┴─────────────┴─────────────┴─────────────┘
+```
 
+---
 
-🔮 Demo & Usage
+## 🔮 **Demo & Usage**
 
+### 🎮 **Interactive Demo**
 
+<div align="center">
 
-🎮 Interactive Demo
+[![Demo App](https://img.shields.io/badge/🎮%20Try%20Live%20Demo-Gradio%20App-ff6b35?style=for-the-badge&logo=gradio)](https://huggingface.co/spaces/vanhai123/phobert-vi-comment-app)
 
+</div>
 
+### 💻 **Code Example**
 
-💻 Code Example
+```python
 from transformers import pipeline
 
 # 🚀 Khởi tạo pipeline
@@ -273,6 +197,10 @@ classifier = pipeline(
 )
 
 # 🔍 Phân loại bình luận
+result = classifier("Tôi không đồng ý với quan điểm này")
+print(f"📊 Kết quả: {result}")
+
+# 🎯 Ví dụ nhiều câu
 comments = [
     "Sản phẩm này rất tuyệt vời!",
     "Tôi không hài lòng với dịch vụ",
@@ -283,48 +211,69 @@ comments = [
 for comment in comments:
     result = classifier(comment)
     print(f"💬 '{comment}' → {result[0]['label']} ({result[0]['score']:.2%})")
+```
 
+---
 
-🌟 Roadmap & Extensions
+## 🌟 **Roadmap & Extensions**
 
+<div align="center">
 
+### 🚀 **Planned Features**
 
+</div>
 
+<table>
+<tr>
+<td width="33%">
 
+**🔄 Text Rewriting**
+- Tự động gợi ý viết lại
+- Chuyển đổi tone
+- Cải thiện văn phong
 
+</td>
+<td width="33%">
 
-timeline
-    title 🗓️ Development Roadmap
-    
-    2024 Q1 : 🔄 Text Rewriting
-             : Auto suggestion
-             : Tone conversion
-             
-    2024 Q2 : 🤖 Chatbot Integration
-             : Real-time analysis
-             : Smart responses
-             
-    2024 Q3 : 🛡️ Moderation Tools
-             : Content filtering
-             : Auto-moderation
-             
-    2024 Q4 : 🌍 Global Expansion
-             : Multi-language
-             : Platform APIs
+**🤖 Chatbot Integration**
+- Tích hợp vào chatbot
+- Real-time analysis
+- Smart responses
 
+</td>
+<td width="33%">
 
+**🛡️ Moderation Tools**
+- Content filtering
+- Auto-moderation
+- Platform integration
 
-🎯 Future Enhancements
+</td>
+</tr>
+</table>
 
- 🌐 Multi-platform API
- 📱 Mobile SDK
- 🔄 Real-time streaming
- 📊 Advanced analytics
- 🌍 Multi-language support
- 🧠 Emotion detection
+### 🎯 **Future Enhancements**
 
+- [ ] 🌐 **Multi-platform API**
+- [ ] 📱 **Mobile SDK**
+- [ ] 🔄 **Real-time streaming**
+- [ ] 📊 **Advanced analytics**
+- [ ] 🌍 **Multi-language support**
+- [ ] 🧠 **Emotion detection**
 
-🤝 Contributing
+---
+
+## 🤝 **Contributing**
+
+<div align="center">
+
+### 💝 **Đóng góp cho dự án**
+
+[![Contributors](https://img.shields.io/badge/Contributors-Welcome-brightgreen?style=for-the-badge&logo=github)](https://github.com/vanhai123/phobert-comment-classifier/issues)
+
+</div>
+
+```bash
 # 🍴 Fork repository
 git clone https://github.com/vanhai123/phobert-comment-classifier.git
 
@@ -338,44 +287,30 @@ git commit -m "✨ Add amazing feature"
 git push origin feature/amazing-feature
 
 # 🔄 Open Pull Request
+```
 
+---
 
-📞 Liên hệ & Hỗ trợ
+## 📞 **Liên hệ & Hỗ trợ**
 
+<div align="center">
 
-👨‍💻 Tác giả: Hà Văn Hải
+### 👨‍💻 **Tác giả: Hà Văn Hải**
 
+[![Email](https://img.shields.io/badge/📧%20Email-vanhai11203@gmail.com-red?style=for-the-badge&logo=gmail)](mailto:vanhai11203@gmail.com)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-vanhai123-orange?style=for-the-badge&logo=huggingface)](https://huggingface.co/vanhai123)
+[![GitHub](https://img.shields.io/badge/🐙%20GitHub-vanhai123-black?style=for-the-badge&logo=github)](https://github.com/vanhai123)
 
+</div>
 
+---
 
+## 📄 **License & Citation**
 
-🇻🇳 AI Researcher
+<details>
+<summary>📜 <strong>MIT License</strong></summary>
 
-
-
-mindmap
-  root((👨‍💻 Contact))
-    📧 Email
-      vanhai11203@gmail.com
-    🤗 HuggingFace
-      vanhai123
-    🐙 GitHub
-      vanhai123
-    💼 LinkedIn
-      Professional Network
-
-
-
-
-
-
-
-
-
-📄 License & Citation
-
-📜 MIT License
-
+```
 MIT License
 
 Copyright (c) 2024 Hà Văn Hải
@@ -389,10 +324,13 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
+```
 
+</details>
 
+### 📚 **Citation**
 
-📚 Citation
+```bibtex
 @misc{phobert-vi-comment-classifier,
   title={PhoBERT Vietnamese Comment Classifier},
   author={Hà Văn Hải},
@@ -400,10 +338,24 @@ copies or substantial portions of the Software.
   publisher={Hugging Face},
   url={https://huggingface.co/vanhai123/phobert-vi-comment-4class}
 }
+```
 
+---
 
+<div align="center">
 
+### 🌟 **Star History**
 
-⭐ Nếu project hữu ích, đừng quên cho một star nhé! ⭐
+[![Star History Chart](https://api.star-history.com/svg?repos=vanhai123/phobert-comment-classifier&type=Date)](https://star-history.com/#vanhai123/phobert-comment-classifier&Date)
 
+---
 
+**⭐ Nếu project hữu ích, đừng quên cho một star nhé! ⭐**
+
+![Wave](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer)
+
+</div>
+
+---
+
+> ✨ **Được phát triển với ❤️ sử dụng Hugging Face Transformers & PhoBERT trên dữ liệu tiếng Việt thực tế**
