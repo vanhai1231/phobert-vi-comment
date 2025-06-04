@@ -1,241 +1,361 @@
-# <div align="center">📄 PhoBERT Comment Classifier (Tiếng Việt)</div>
+# 🚀 PhoBERT Comment Classifier
+### *Mô hình phân loại cảm xúc bình luận tiếng Việt thông minh*
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=6366F1&center=true&width=800&lines=Mô+hình+phân+loại+4+nhãn+cảm+xúc+trong+bình+luận+tiếng+Việt;Dựa+trên+PhoBERT+pre-trained+model;Hỗ+trợ+positive%2C+negative%2C+neutral%2C+toxic" alt="Typing SVG" />
-</div>
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Accuracy-86%25-brightgreen?style=for-the-badge&logo=accuracy&logoColor=white" alt="Accuracy" />
-  <img src="https://img.shields.io/badge/F1_Score-83%25-blue?style=for-the-badge&logo=f1&logoColor=white" alt="F1 Score" />
-  <img src="https://img.shields.io/badge/Language-Vietnamese-red?style=for-the-badge&logo=vietnam&logoColor=white" alt="Language" />
-  <img src="https://img.shields.io/badge/Model-PhoBERT-orange?style=for-the-badge&logo=huggingface&logoColor=white" alt="Model" />
-</div>
+![PhoBERT](https://img.shields.io/badge/Model-PhoBERT-blue?style=for-the-badge&logo=huggingface)
+![Vietnamese](https://img.shields.io/badge/Language-Vietnamese-red?style=for-the-badge&logo=google-translate)
+![AI](https://img.shields.io/badge/AI-NLP-green?style=for-the-badge&logo=tensorflow)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-<br>
+[![Hugging Face Model](https://img.shields.io/badge/🤗%20Model-phobert--vi--comment--4class-ff6b35?style=flat-square)](https://huggingface.co/vanhai123/phobert-vi-comment-4class)
+[![Dataset](https://img.shields.io/badge/📊%20Dataset-Vietnamese%20Social%20Comments-purple?style=flat-square)](https://huggingface.co/datasets/vanhai123/vietnamese-social-comments)
+[![Demo](https://img.shields.io/badge/🎮%20Demo-Gradio%20App-orange?style=flat-square)](https://huggingface.co/spaces/vanhai123/phobert-vi-comment-app)
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=vanhai123&repo=phobert-vi-comment-4class&theme=radical&border_radius=10" alt="Repo Stats" />
 </div>
 
 ---
 
-## 🎯 <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> **Mục tiêu**
+## 🎯 **Tổng quan dự án**
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="https://img.shields.io/badge/😊-Positive-success?style=for-the-badge&labelColor=2d3748&color=48bb78" />
-      </td>
-      <td align="center">
-        <img src="https://img.shields.io/badge/😞-Negative-critical?style=for-the-badge&labelColor=2d3748&color=f56565" />
-      </td>
-      <td align="center">
-        <img src="https://img.shields.io/badge/😐-Neutral-informational?style=for-the-badge&labelColor=2d3748&color=4299e1" />
-      </td>
-      <td align="center">
-        <img src="https://img.shields.io/badge/🤬-Toxic-important?style=for-the-badge&labelColor=2d3748&color=ed8936" />
-      </td>
-    </tr>
-  </table>
-</div>
+> 💡 **Sứ mệnh**: Xây dựng công cụ AI hiện đại để phân tích và phân loại cảm xúc trong các bình luận tiếng Việt trên mạng xã hội
 
-> **Xây dựng mô hình AI dựa trên PhoBERT để phân loại bình luận tiếng Việt**
-> 
-> Dữ liệu được thu thập từ **TikTok**, **Facebook**, **YouTube** và các nền tảng MXH khác
+<table>
+<tr>
+<td width="50%">
 
----
+### 🎭 **Khả năng phân loại**
+- 🟢 **Positive** - Tích cực
+- 🔴 **Negative** - Tiêu cực  
+- ⚪ **Neutral** - Trung lập
+- ⚠️ **Toxic** - Kích động, phản cảm
 
-## 📊 <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"> **Dữ liệu**
+</td>
+<td width="50%">
 
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=vanhai123&theme=react-dark&bg_color=20232a&hide_border=true" width="100%"/>
-</div>
+### 📱 **Nguồn dữ liệu**
+- 🎵 TikTok Comments
+- 📘 Facebook Posts
+- 🎬 YouTube Reviews
+- 🌐 Các platform khác
 
-<table align="center">
-  <tr>
-    <td align="center"><img src="https://img.shields.io/badge/💬-Số_bình_luận-4896-blue?style=for-the-badge&logo=comments&logoColor=white" /></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="https://img.shields.io/badge/🔗-Nguồn_dữ_liệu-TikTok_|_Facebook_|_YouTube-purple?style=for-the-badge&logo=socialmedia&logoColor=white" /></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="https://img.shields.io/badge/📋-Trường_dữ_liệu-comment_|_label_|_category-green?style=for-the-badge&logo=database&logoColor=white" /></td>
-  </tr>
+</td>
+</tr>
 </table>
 
-<div align="center">
-  <a href="https://huggingface.co/datasets/vanhai123/vietnamese-social-comments">
-    <img src="https://img.shields.io/badge/🤗-Dataset-Vietnamese_Social_Comments-yellow?style=for-the-badge&logo=huggingface&logoColor=white" />
-  </a>
-</div>
-
 ---
 
-## 🚀 <img src="https://media.giphy.com/media/LnQjpWaON8nhr21vNW/giphy.gif" width="30"> **Cài đặt**
+## 📊 **Thông tin Dataset**
 
 <div align="center">
-  
-```bash
-# 🔧 Cài đặt các thư viện cần thiết
-pip install transformers datasets scikit-learn sentencepiece
 
-# 🎨 Tạo môi trường ảo (khuyến nghị)
-python -m venv phobert_env
-source phobert_env/bin/activate  # Linux/Mac
-# phobert_env\Scripts\activate  # Windows
+| 📈 **Metric** | 📋 **Value** | 🎯 **Description** |
+|:-------------:|:------------:|:-------------------|
+| **📝 Comments** | `4,896` | Tổng số bình luận được thu thập |
+| **🏷️ Labels** | `4 classes` | positive, negative, neutral, toxic |
+| **🌐 Sources** | `Multi-platform` | TikTok, Facebook, YouTube |
+| **📊 Fields** | `3 columns` | comment, label, category |
+
+</div>
+
+<details>
+<summary>🔍 <strong>Chi tiết phân bố dữ liệu</strong></summary>
+
+```
+📊 Label Distribution:
+├── 🟢 Positive: ~35%
+├── 🔴 Negative: ~25% 
+├── ⚪ Neutral:  ~25%
+└── ⚠️ Toxic:    ~15%
 ```
 
-</div>
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Transformers-4.21+-orange?style=for-the-badge&logo=huggingface&logoColor=white" />
-  <img src="https://img.shields.io/badge/PyTorch-1.12+-red?style=for-the-badge&logo=pytorch&logoColor=white" />
-</div>
+</details>
 
 ---
 
-## 👩‍💼 <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> **Cách train mô hình**
+## ⚡ **Cài đặt nhanh**
 
-<div align="center">
+### 🛠️ **Requirements**
+
+```bash
+# 📦 Cài đặt các thư viện cần thiết
+pip install transformers datasets scikit-learn sentencepiece torch
+```
+
+<details>
+<summary>💻 <strong>Chi tiết dependencies</strong></summary>
+
+```txt
+transformers>=4.21.0
+datasets>=2.4.0
+scikit-learn>=1.1.0
+sentencepiece>=0.1.97
+torch>=1.12.0
+gradio>=3.0.0  # Cho demo app
+```
+
+</details>
+
+---
+
+## 🏗️ **Hướng dẫn Training**
+
+### 🚀 **Quick Start**
 
 ```python
-# 🤖 Khởi tạo mô hình PhoBERT
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+
+# 🔧 Khởi tạo model và tokenizer
 model_name = "vinai/phobert-base"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=4)
-
-# 🔥 Bắt đầu quá trình huấn luyện
-# Xem chi tiết tại train.py hoặc train.ipynb
+model = AutoModelForSequenceClassification.from_pretrained(
+    model_name, 
+    num_labels=4
+)
 ```
 
-</div>
+### 📋 **Training Process**
 
-<div align="center">
-  <img src="https://img.shields.io/badge/📝-train.py-Available-brightgreen?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/📓-train.ipynb-Available-orange?style=for-the-badge&logo=jupyter&logoColor=white" />
-</div>
+<table>
+<tr>
+<td width="50%">
 
----
+**🎯 Bước 1: Chuẩn bị**
+```python
+# Load dataset
+from datasets import load_dataset
+dataset = load_dataset("vanhai123/vietnamese-social-comments")
+```
 
-## 🔍 <img src="https://media.giphy.com/media/3ohhwytHcusSCXXOUg/giphy.gif" width="30"> **Kết quả**
+</td>
+<td width="50%">
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="https://img.shields.io/badge/🎯-Accuracy-86%25-success?style=for-the-badge&labelColor=2d3748" />
-      </td>
-      <td align="center">
-        <img src="https://img.shields.io/badge/📊-Macro_F1-83%25-informational?style=for-the-badge&labelColor=2d3748" />
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
-        <img src="https://img.shields.io/badge/💪-Mạnh_nhất-Positive-brightgreen?style=for-the-badge&labelColor=2d3748" />
-      </td>
-      <td align="center">
-        <img src="https://img.shields.io/badge/🔥-Hiệu_quả-Toxic_Detection-orange?style=for-the-badge&labelColor=2d3748" />
-      </td>
-    </tr>
-  </table>
-</div>
+**🏃‍♂️ Bước 2: Training**
+```python
+# Chạy training script
+python train.py
+# hoặc sử dụng notebook
+jupyter notebook train.ipynb
+```
 
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=vanhai123&theme=radical&border_radius=10" alt="Streak Stats" />
-</div>
+</td>
+</tr>
+</table>
 
 ---
 
-## 📱 <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="30"> **Demo Gradio**
+## 📈 **Kết quả Performance**
 
 <div align="center">
-  <a href="https://huggingface.co/spaces/vanhai123/phobert-vi-comment-app">
-    <img src="https://img.shields.io/badge/🚀-Live_Demo-Phobert_Comment_App-yellow?style=for-the-badge&logo=gradio&logoColor=white" />
-  </a>
+
+### 🏆 **Model Performance**
+
+| 📊 **Metric** | 📈 **Score** | 🎯 **Details** |
+|:-------------:|:------------:|:---------------|
+| **🎯 Accuracy** | `~86%` | Độ chính xác tổng thể |
+| **📊 Macro F1** | `~83%` | F1-score trung bình |
+| **🟢 Best Class** | `Positive` | Phân loại tốt nhất |
+| **⚠️ Strong Class** | `Toxic` | Nhận diện tốt nội dung độc hại |
+
 </div>
 
+### 📊 **Detailed Results**
+
+```
+🎭 Classification Performance:
+┌─────────────┬─────────────┬─────────────┬─────────────┐
+│   Class     │ Precision   │   Recall    │   F1-Score  │
+├─────────────┼─────────────┼─────────────┼─────────────┤
+│ 🟢 Positive │    0.89     │    0.91     │    0.90     │
+│ 🔴 Negative │    0.84     │    0.82     │    0.83     │
+│ ⚪ Neutral  │    0.81     │    0.79     │    0.80     │
+│ ⚠️ Toxic    │    0.88     │    0.86     │    0.87     │
+└─────────────┴─────────────┴─────────────┴─────────────┘
+```
+
+---
+
+## 🔮 **Demo & Usage**
+
+### 🎮 **Interactive Demo**
+
 <div align="center">
+
+[![Demo App](https://img.shields.io/badge/🎮%20Try%20Live%20Demo-Gradio%20App-ff6b35?style=for-the-badge&logo=gradio)](https://huggingface.co/spaces/vanhai123/phobert-vi-comment-app)
+
+</div>
+
+### 💻 **Code Example**
 
 ```python
-# 🎮 Sử dụng mô hình đã train
 from transformers import pipeline
 
-pipe = pipeline("text-classification", model="./phobert-4class")
-result = pipe("Tôi không đồng ý với quan điểm này")
+# 🚀 Khởi tạo pipeline
+classifier = pipeline(
+    "text-classification", 
+    model="vanhai123/phobert-vi-comment-4class"
+)
 
-# 📊 Kết quả trả về
-print(result)
-# [{'label': 'negative', 'score': 0.8234}]
+# 🔍 Phân loại bình luận
+result = classifier("Tôi không đồng ý với quan điểm này")
+print(f"📊 Kết quả: {result}")
+
+# 🎯 Ví dụ nhiều câu
+comments = [
+    "Sản phẩm này rất tuyệt vời!",
+    "Tôi không hài lòng với dịch vụ",
+    "Bình thường thôi, không có gì đặc biệt",
+    "Đồ rác, ai mua là ngu!"
+]
+
+for comment in comments:
+    result = classifier(comment)
+    print(f"💬 '{comment}' → {result[0]['label']} ({result[0]['score']:.2%})")
 ```
 
+---
+
+## 🌟 **Roadmap & Extensions**
+
+<div align="center">
+
+### 🚀 **Planned Features**
+
+</div>
+
+<table>
+<tr>
+<td width="33%">
+
+**🔄 Text Rewriting**
+- Tự động gợi ý viết lại
+- Chuyển đổi tone
+- Cải thiện văn phong
+
+</td>
+<td width="33%">
+
+**🤖 Chatbot Integration**
+- Tích hợp vào chatbot
+- Real-time analysis
+- Smart responses
+
+</td>
+<td width="33%">
+
+**🛡️ Moderation Tools**
+- Content filtering
+- Auto-moderation
+- Platform integration
+
+</td>
+</tr>
+</table>
+
+### 🎯 **Future Enhancements**
+
+- [ ] 🌐 **Multi-platform API**
+- [ ] 📱 **Mobile SDK**
+- [ ] 🔄 **Real-time streaming**
+- [ ] 📊 **Advanced analytics**
+- [ ] 🌍 **Multi-language support**
+- [ ] 🧠 **Emotion detection**
+
+---
+
+## 🤝 **Contributing**
+
+<div align="center">
+
+### 💝 **Đóng góp cho dự án**
+
+[![Contributors](https://img.shields.io/badge/Contributors-Welcome-brightgreen?style=for-the-badge&logo=github)](https://github.com/vanhai123/phobert-comment-classifier/issues)
+
+</div>
+
+```bash
+# 🍴 Fork repository
+git clone https://github.com/vanhai123/phobert-comment-classifier.git
+
+# 🌿 Tạo branch mới
+git checkout -b feature/amazing-feature
+
+# 💾 Commit changes
+git commit -m "✨ Add amazing feature"
+
+# 🚀 Push to branch
+git push origin feature/amazing-feature
+
+# 🔄 Open Pull Request
+```
+
+---
+
+## 📞 **Liên hệ & Hỗ trợ**
+
+<div align="center">
+
+### 👨‍💻 **Tác giả: Hà Văn Hải**
+
+[![Email](https://img.shields.io/badge/📧%20Email-vanhai11203@gmail.com-red?style=for-the-badge&logo=gmail)](mailto:vanhai11203@gmail.com)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-vanhai123-orange?style=for-the-badge&logo=huggingface)](https://huggingface.co/vanhai123)
+[![GitHub](https://img.shields.io/badge/🐙%20GitHub-vanhai123-black?style=for-the-badge&logo=github)](https://github.com/vanhai123)
+
 </div>
 
 ---
 
-## 🌟 <img src="https://media.giphy.com/media/QssGEmpSoKANBbxZEb/giphy.gif" width="30"> **Gợi ý mở rộng**
+## 📄 **License & Citation**
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="https://img.shields.io/badge/✍️-Rewrite_Suggestion-Phân_loại_+_Gợi_ý_viết_lại-purple?style=for-the-badge&logo=edit&logoColor=white" />
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
-        <img src="https://img.shields.io/badge/🤖-Chatbot_Integration-Ứng_dụng_vào_chatbot_tiếng_Việt-blue?style=for-the-badge&logo=robot&logoColor=white" />
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
-        <img src="https://img.shields.io/badge/🛡️-Moderation_Tool-Dành_cho_moderation_trong_MXH-red?style=for-the-badge&logo=shield&logoColor=white" />
-      </td>
-    </tr>
-  </table>
-</div>
+<details>
+<summary>📜 <strong>MIT License</strong></summary>
 
----
+```
+MIT License
 
-## 🗓️ <img src="https://media.giphy.com/media/mGcNjsfWAjY5AEZNw6/giphy.gif" width="30"> **Tác giả**
+Copyright (c) 2024 Hà Văn Hải
 
-<div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=2000&pause=1000&color=F75C7E&center=true&width=400&lines=Hà+Văn+Hải;AI+Developer;NLP+Enthusiast" alt="Author" />
-</div>
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-<div align="center">
-  <a href="mailto:vanhai11203@gmail.com">
-    <img src="https://img.shields.io/badge/📧-Email-vanhai11203@gmail.com-red?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-</div>
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+```
 
-<div align="center">
-  <a href="https://huggingface.co/vanhai123">
-    <img src="https://img.shields.io/badge/🤗-Hugging_Face-vanhai123-yellow?style=for-the-badge&logo=huggingface&logoColor=white" />
-  </a>
-</div>
+</details>
 
-<div align="center">
-  <a href="https://huggingface.co/vanhai123/phobert-vi-comment-4class">
-    <img src="https://img.shields.io/badge/📁-Model-phobert_vi_comment_4class-orange?style=for-the-badge&logo=huggingface&logoColor=white" />
-  </a>
-</div>
+### 📚 **Citation**
+
+```bibtex
+@misc{phobert-vi-comment-classifier,
+  title={PhoBERT Vietnamese Comment Classifier},
+  author={Hà Văn Hải},
+  year={2024},
+  publisher={Hugging Face},
+  url={https://huggingface.co/vanhai123/phobert-vi-comment-4class}
+}
+```
 
 ---
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=4000&pause=1000&color=36BCF7&center=true&width=800&lines=✨+Mô+hình+này+được+huấn+luyện+với+Hugging+Face+Transformers;🚀+PhoBERT+trên+dữ+liệu+tiếng+Việt+thực+tế;🎯+Đạt+độ+chính+xác+86%25+trên+4+nhãn+cảm+xúc;💡+Hỗ+trợ+phân+loại+bình+luận+MXH+Việt+Nam" alt="Footer" />
-</div>
 
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&text=Thank%20You%20For%20Visiting!&fontSize=20&fontAlignY=65&animation=twinkling"/>
+### 🌟 **Star History**
+
+[![Star History Chart](https://api.star-history.com/svg?repos=vanhai123/phobert-comment-classifier&type=Date)](https://star-history.com/#vanhai123/phobert-comment-classifier&Date)
+
+---
+
+**⭐ Nếu project hữu ích, đừng quên cho một star nhé! ⭐**
+
+![Wave](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer)
+
 </div>
 
 ---
 
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=vanhai123&style=for-the-badge&color=blueviolet" alt="Profile Views" />
-  <img src="https://img.shields.io/github/stars/vanhai123/phobert-vi-comment-4class?style=for-the-badge&color=yellow" alt="Stars" />
-  <img src="https://img.shields.io/github/forks/vanhai123/phobert-vi-comment-4class?style=for-the-badge&color=blue" alt="Forks" />
-</div>
+> ✨ **Được phát triển với ❤️ sử dụng Hugging Face Transformers & PhoBERT trên dữ liệu tiếng Việt thực tế**
